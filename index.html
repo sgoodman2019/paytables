@@ -344,37 +344,167 @@
               </div>
               <!-- U1XX INNER PILLS END -->
             </div>
-            <div
-              class="tab-pane fade"
-              id="u2xx"
-              role="tabpanel"
-              aria-labelledby="u2xx-tab"
-            >
-              <!-- U1XX INNER PILLS BEGIN -->
 
-              <!-- U1XX INNER PILLS END -->
+          </div>
+          <div
+          class="tab-pane fade"
+          id="u2xx"
+          role="tabpanel"
+          aria-labelledby="u2xx-tab"
+        >
+          <!-- U2XX INNER PILLS BEGIN -->
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills-u200-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-u200"
+                type="button"
+                role="tab"
+                aria-controls="pills-u100"
+                aria-selected="true"
+              >
+                U200
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-u110-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-u110"
+                type="button"
+                role="tab"
+                aria-controls="pills-u110"
+                aria-selected="false"
+              >
+                U210
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-u130-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-u130"
+                type="button"
+                role="tab"
+                aria-controls="pills-u130"
+                aria-selected="false"
+              >
+                U230
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills-u150-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-u150"
+                type="button"
+                role="tab"
+                aria-controls="pills-u150"
+                aria-selected="false"
+              >
+                U250
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-u200"
+              role="tabpanel"
+              aria-labelledby="pills-u100-tab"
+              tabindex="0"
+            >
+              <div class="row">
+                <div class="col d-flex justify-content-between">
+                  <h5>U200</h5><button>Save as PDF<i class="bi bi-file-earmark-pdf-fill text-danger"></i></button>
+                </div>
+                <table class="table table-striped">
+                <tr>
+                  <th style="background-color: #3d829e; color: white">
+                    Step
+                  </th>
+                  <th style="background-color: #3d829e; color: white">
+                    Annual
+                  </th>
+                  <th style="background-color: #3d829e; color: white">
+                    Per Hour
+                  </th>
+                  <th style="background-color: #3d829e; color: white">
+                    Earned
+                  </th>
+                </tr>
+                <tr
+                  ng-repeat="row in u200"
+                  class="clickable_row btnRow"
+                  data-toggle="modal"
+                  data-target="#rowModal"
+                  ng-click="openRowModal()"
+                >
+                  <td style="background-color: #3d829e; color: white">
+                    {{row.Step}}
+                  </td>
+                  <td>${{row.Annual}}</td>
+                  <td>{{row.PerHour}}</td>
+                  <td>{{row.Earned}}</td>
+                </tr>
+              </table>
             </div>
             <div
               class="tab-pane fade"
-              id="u3xx"
+              id="pills-u210"
               role="tabpanel"
-              aria-labelledby="u3xx-tab"
+              aria-labelledby="pills-u210-tab"
+              tabindex="0"
             >
-              <!-- U1XX INNER PILLS BEGIN -->
-
-              <!-- U1XX INNER PILLS END -->
+              U210
             </div>
             <div
               class="tab-pane fade"
-              id="u5xx"
+              id="pills-u230"
               role="tabpanel"
-              aria-labelledby="u5xx-tab"
+              aria-labelledby="pills-u230-tab"
+              tabindex="0"
             >
-              <!-- U1XX INNER PILLS BEGIN -->
-
-              <!-- U1XX INNER PILLS END -->
+              U230
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-u250"
+              role="tabpanel"
+              aria-labelledby="pills-u250-tab"
+              tabindex="0"
+            >
+              U250
             </div>
           </div>
+          <!-- U2XX INNER PILLS END -->
+        </div>
+        <div
+          class="tab-pane fade"
+          id="u3xx"
+          role="tabpanel"
+          aria-labelledby="u3xx-tab"
+        >
+          <!-- U3XX INNER PILLS BEGIN -->
+U3XX
+          <!-- U3XX INNER PILLS END -->
+        </div>
+        <div
+          class="tab-pane fade"
+          id="u5xx"
+          role="tabpanel"
+          aria-labelledby="u5xx-tab"
+        >
+          <!-- U5XX INNER PILLS BEGIN -->
+U5XX
+          <!-- U5XX INNER PILLS END -->
+        </div>
+
         </div>
       </div>
     </div>
