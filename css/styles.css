@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  /* font-size: 100%; */
+  vertical-align: baseline;
+  background: transparent;
+}
+
+header img {
+  margin-top: 0;
+  padding-top: 0;
+  vertical-align: top;
+}
+
+#uxxx {
+  vertical-align: middle;
+}
+
+th {
+  background-color: blue;
+  color: white;
+}
+
+#modalButton {
+  background-color: #3d829e;
+  border: none;
+}
+
+hr {
+  height: 0.1rem;
+  background-color: #3d829e;
+  border: none;
+}
+
+.nav-tabs .nav-link,
+.nav-link {
+  color: #3d829e;
+}
+
+.nav-link:hover {
+  color: #6b2a1b;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #3d829e;
+}
