@@ -8,6 +8,10 @@
   background: transparent;
 }
 
+header {
+  height: 15%;
+}
+
 header img {
   margin-top: 0;
   padding-top: 0;
