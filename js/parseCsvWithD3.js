@@ -71,7 +71,7 @@ d3.csv("../data/current_pay_data.csv").then((data) => {
   //   console.log(u310);
   //   console.log(u330);
   //   console.log(u350);
-  console.log(u500);
+  console.log(JSON.stringify(u500));
   //   console.log(u510);
   //   console.log(u530);
   //   console.log(u550);

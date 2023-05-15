@@ -76,6 +76,41 @@ app.controller("myController", function ($scope, $http) {
     { Step: 29, Annual: 126601, PerHour: 60.4, Earned: 83.29 },
   ];
 
+  $scope.u300 = [
+    { Step: 0, Annual: 51483, PerHour: 24.56, Earned: 33.87 },
+    { Step: 1, Annual: 53052, PerHour: 25.31, Earned: 34.9 },
+    { Step: 2, Annual: 54640, PerHour: 26.07, Earned: 35.95 },
+    { Step: 3, Annual: 56245, PerHour: 26.83, Earned: 37.0 },
+    { Step: 4, Annual: 57875, PerHour: 27.61, Earned: 38.08 },
+    { Step: 5, Annual: 59521, PerHour: 28.4, Earned: 39.16 },
+    { Step: 6, Annual: 61187, PerHour: 29.19, Earned: 40.25 },
+    { Step: 7, Annual: 62865, PerHour: 29.99, Earned: 41.36 },
+    { Step: 8, Annual: 64557, PerHour: 30.8, Earned: 42.47 },
+    { Step: 9, Annual: 66265, PerHour: 31.61, Earned: 43.6 },
+    { Step: 10, Annual: 67985, PerHour: 32.44, Earned: 44.73 },
+    { Step: 11, Annual: 69723, PerHour: 33.26, Earned: 45.87 },
+    { Step: 12, Annual: 71454, PerHour: 34.09, Earned: 47.01 },
+    { Step: 13, Annual: 73203, PerHour: 34.92, Earned: 48.16 },
+    { Step: 14, Annual: 74957, PerHour: 35.76, Earned: 49.31 },
+    { Step: 15, Annual: 76723, PerHour: 36.6, Earned: 50.48 },
+    { Step: 16, Annual: 78478, PerHour: 37.44, Earned: 51.63 },
+    { Step: 17, Annual: 80239, PerHour: 38.28, Earned: 52.79 },
+    { Step: 18, Annual: 81999, PerHour: 39.12, Earned: 53.95 },
+    { Step: 19, Annual: 83758, PerHour: 39.96, Earned: 55.1 },
+    { Step: 20, Annual: 85512, PerHour: 40.8, Earned: 56.26 },
+    { Step: 21, Annual: 87263, PerHour: 41.63, Earned: 57.41 },
+    { Step: 22, Annual: 89003, PerHour: 42.46, Earned: 58.55 },
+    { Step: 23, Annual: 90734, PerHour: 43.29, Earned: 59.69 },
+    { Step: 24, Annual: 92451, PerHour: 44.11, Earned: 60.82 },
+    { Step: 25, Annual: 94159, PerHour: 44.92, Earned: 61.95 },
+    { Step: 26, Annual: 95848, PerHour: 45.73, Earned: 63.06 },
+    { Step: 27, Annual: 97521, PerHour: 46.53, Earned: 64.16 },
+    { Step: 28, Annual: 99175, PerHour: 47.32, Earned: 65.25 },
+    { Step: 29, Annual: 100806, PerHour: 48.09, Earned: 66.32 },
+  ];
+
+  //$scope.u500 = [];
+
   // $scope.submit = function () {
   //   const u1xxRate = Number(document.getElementById("u1xx").value) / 100;
   //   const u2xxRate = document.getElementById("u2xx").value;

@@ -11,10 +11,12 @@
     <script src="js/jquery-3.6.4.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/angular.js"></script>
+    <!-- <script src="js/d3.js"></script> -->
     <script src="js/script.js" defer></script>
+    <!-- <script src="js/parseCsvWithD3.js"></script> -->
   </head>
   <body>
-    <header class="page-header bg-dark">
+    <header class="page-header bg-dark" style="height: 4rem;">
       <img src="img/color_stripe.svg" class="w-100" />
     </header>
     <hr />
@@ -48,7 +50,7 @@
             Enter New Pay Rates
           </button>
 
-          <!-- Modal -->
+          <!-- ///////// Modal Form ////////// -->
           <form class="form">
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -62,8 +64,8 @@
                                 <div class="d-flex align-items-start">
                             <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="v-pills-rates-tab" data-bs-toggle="pill" href="#v-pills-rates" role="tab" aria-controls="v-pills-user" aria-selected="true">Rates</a>
-                                <a class="nav-link" id="v-pills-pooblastila-tab" data-bs-toggle="pill" href="#v-pills-pooblastila" role="tab" aria-controls="v-pills-pooblastila" aria-selected="false">Exclude Tables</a>
-                                <a class="nav-link" id="v-pills-prijave-tab" data-bs-toggle="pill" href="#v-pills-prijave" role="tab" aria-controls="v-pills-prijave" aria-selected="false">Options</a>
+                                <a class="nav-link" id="v-pills-exclude-tab" data-bs-toggle="pill" href="#v-pills-exclude" role="tab" aria-controls="v-pills-exclude" aria-selected="false">Exclude Tables</a>
+                                <a class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" href="#v-pills-options" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</a>
                             </div>
                             <div class="tab-content flex-grow-1" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active " id="v-pills-rates" role="tabpanel" aria-labelledby="v-pills-user-tab">
@@ -72,36 +74,36 @@
                                   <label for="guam_rate">GUAM (RUS LOCALITY)</label>
                                   <input type="text" id="guam_rate">
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-pooblastila" role="tabpanel" aria-labelledby="v-pills-pooblastila-tab">
+                                <div class="tab-pane fade" id="v-pills-exclude" role="tabpanel" aria-labelledby="v-pills-exclude-tab">
                                   <div class="row">
                                     <div class="col-3">
-                                      <input type="checkbox" name="favorite_pet" value="Cats">U100<br>
-                                        <input type="checkbox" name="favorite_pet" value="Cats">U110<br>
-                                        <input type="checkbox" name="favorite_pet" value="Dogs">U130<br>
-                                        <input type="checkbox" name="favorite_pet" value="Birds">U150<br>
+                                      <input type="checkbox" name="U100" value="U100">U100<br>
+                                        <input type="checkbox" name="U100" value="U110">U100<br>
+                                        <input type="checkbox" name="U130" value="U130">U130<br>
+                                        <input type="checkbox" name="U150" value="U150">U150<br>
                                     </div>
                                     <div class="col-3">
-                                      <input type="checkbox" name="favorite_pet" value="Cats">U200<br>
-                                        <input type="checkbox" name="favorite_pet" value="Cats">U210<br>
-                                        <input type="checkbox" name="favorite_pet" value="Dogs">U230<br>
-                                        <input type="checkbox" name="favorite_pet" value="Birds">U250<br>
+                                      <input type="checkbox" name="U200" value="U200">U200<br>
+                                        <input type="checkbox" name="U210" value="U210">U210<br>
+                                        <input type="checkbox" name="U230" value="U230">U230<br>
+                                        <input type="checkbox" name="U250" value="U250">U250<br>
                                     </div>
                                     <div class="col-3">
-                                      <input type="checkbox" name="favorite_pet" value="Cats">U300<br>
-                                        <input type="checkbox" name="favorite_pet" value="Cats">U310<br>
-                                        <input type="checkbox" name="favorite_pet" value="Dogs">U330<br>
-                                        <input type="checkbox" name="favorite_pet" value="Birds">U350<br>
+                                      <input type="checkbox" name="U300" value="U300">U300<br>
+                                        <input type="checkbox" name="U310" value="U310">U310<br>
+                                        <input type="checkbox" name="U330" value="U330">U330<br>
+                                        <input type="checkbox" name="U350" value="U350">U350<br>
                                     </div>
                                     <div class="col-3">
-                                      <input type="checkbox" name="favorite_pet" value="Cats">U500<br>
-                                        <input type="checkbox" name="favorite_pet" value="Cats">U510<br>
-                                        <input type="checkbox" name="favorite_pet" value="Dogs">U530<br>
-                                        <input type="checkbox" name="favorite_pet" value="Birds">U550<br>
+                                      <input type="checkbox" name="U500" value="U500">U500<br>
+                                        <input type="checkbox" name="U510" value="U510">U510<br>
+                                        <input type="checkbox" name="U530" value="U530">U530<br>
+                                        <input type="checkbox" name="U550" value="U550">U550<br>
                                     </div>
                                   </div>
 
                               </div>
-                                <div class="tab-pane fade" id="v-pills-prijave" role="tabpanel" aria-labelledby="v-pills-prijave-tab">Some other options</div>
+                                <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">Some other options</div>
                             </div>
                         </div>
                   </div>
@@ -113,6 +115,7 @@
               </div>
             </div>
               </form>
+            <!-- ///////// Modal Form END ////////// -->
           <!-- <div
             class="modal fade"
             id="exampleModal"
@@ -313,6 +316,7 @@
                       <td>{{row.Earned}}</td>
                     </tr>
                   </table>
+
                 </div>
                 <div
                   class="tab-pane fade"
