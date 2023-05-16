@@ -16,501 +16,490 @@
     <!-- <script src="js/parseCsvWithD3.js"></script> -->
   </head>
   <body>
-    <header class="page-header bg-dark" style="height: 4rem;">
-      <img src="img/color_stripe.svg" class="w-100" />
+    <!-- <div id="color_stripe"><img src="img/color_stripe.svg"></div> -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <a class="navbar-brand" href="#"><img src="img/CHRA_Seal.png" height="80"></a>
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item"><a class="nav-link" href="https://disa.deps.mil/org/eu/EU3/EU34/Pages/Home.aspx">EU34</a></li>
+                <li class="nav-item current-page"><a class="nav-link" href="#">Support Tracker</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://disa.deps.mil/org/eu/EU3/EU34/Rolling%20Log/library.html">Governance Library</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://disa.deps.mil/org/eu/EU3/EU34/Rolling%20Log/project-tracker.html">Projects Tracker</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Maps/Diagrams</a></li>               -->
+            </ul>
+            <!-- <img src="img/dodea.png" style="margin-left: auto; padding-right: 20px;" height="75"> -->
+        </nav>
     </header>
-    <hr />
-    <div class="container page-header">
-      <div class="row">
-        <div class="col d-flex justify-content-start">
-          <h3 class="align-self-center">DoDEA Pay Tables</h3>
-        </div>
-        <div class="col d-flex justify-content-end">
-          <img
-            src="img/dodea.png"
-            class="align-self-end"
-            style="height: 50px"
-          />
-        </div>
-      </div>
-      <hr />
-    </div>
 
     <div class="container" ng-controller="myController">
-      <div class="row">
-        <div class="col">
-          <!-- Button trigger modal -->
+      <div class="row" id="paytable-heading">
+        <div class="col d-flex justify-content-between">
+          <h4>DoDEA Pay Tables</h4>
+          <!-- ///////// Button trigger modal ////////// -->
           <button
             type="button"
             class="btn btn-primary"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#formModal"
             id="modalButton"
           >
             Enter New Pay Rates
           </button>
-
-          <!-- ///////// Modal Form ////////// -->
-          <form class="form">
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Submit New Rates</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                                <div class="d-flex align-items-start">
-                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link active" id="v-pills-rates-tab" data-bs-toggle="pill" href="#v-pills-rates" role="tab" aria-controls="v-pills-user" aria-selected="true">Rates</a>
-                                <a class="nav-link" id="v-pills-exclude-tab" data-bs-toggle="pill" href="#v-pills-exclude" role="tab" aria-controls="v-pills-exclude" aria-selected="false">Exclude Tables</a>
-                                <a class="nav-link" id="v-pills-options-tab" data-bs-toggle="pill" href="#v-pills-options" role="tab" aria-controls="v-pills-options" aria-selected="false">Options</a>
-                            </div>
-                            <div class="tab-content flex-grow-1" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active " id="v-pills-rates" role="tabpanel" aria-labelledby="v-pills-user-tab">
-                                  <label for="rus_rate">RUS (RUS LOCALITY)</label>
-                                  <input type="text" id="rus_rate"><br>
-                                  <label for="guam_rate">GUAM (RUS LOCALITY)</label>
-                                  <input type="text" id="guam_rate">
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-exclude" role="tabpanel" aria-labelledby="v-pills-exclude-tab">
-                                  <div class="row">
-                                    <div class="col-3">
-                                      <input type="checkbox" name="U100" value="U100">U100<br>
-                                        <input type="checkbox" name="U100" value="U110">U100<br>
-                                        <input type="checkbox" name="U130" value="U130">U130<br>
-                                        <input type="checkbox" name="U150" value="U150">U150<br>
-                                    </div>
-                                    <div class="col-3">
-                                      <input type="checkbox" name="U200" value="U200">U200<br>
-                                        <input type="checkbox" name="U210" value="U210">U210<br>
-                                        <input type="checkbox" name="U230" value="U230">U230<br>
-                                        <input type="checkbox" name="U250" value="U250">U250<br>
-                                    </div>
-                                    <div class="col-3">
-                                      <input type="checkbox" name="U300" value="U300">U300<br>
-                                        <input type="checkbox" name="U310" value="U310">U310<br>
-                                        <input type="checkbox" name="U330" value="U330">U330<br>
-                                        <input type="checkbox" name="U350" value="U350">U350<br>
-                                    </div>
-                                    <div class="col-3">
-                                      <input type="checkbox" name="U500" value="U500">U500<br>
-                                        <input type="checkbox" name="U510" value="U510">U510<br>
-                                        <input type="checkbox" name="U530" value="U530">U530<br>
-                                        <input type="checkbox" name="U550" value="U550">U550<br>
-                                    </div>
-                                  </div>
-
-                              </div>
-                                <div class="tab-pane fade" id="v-pills-options" role="tabpanel" aria-labelledby="v-pills-options-tab">Some other options</div>
-                            </div>
-                        </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-              </form>
-            <!-- ///////// Modal Form END ////////// -->
-          <!-- <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    New Pay Rates
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">...</div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Submit changes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <hr />
         </div>
+        <hr style="margin-top: 1.5rem;">
       </div>
-      <!-- ////////////// TABS BEGIN ///////////////////////// -->
-      <div class="row">
-        <div class="col">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="u1xx-tab"
-                data-bs-toggle="tab"
-                href="#u1xx"
-                role="tab"
-                aria-controls="u1xx"
-                aria-selected="true"
-                >U1XX</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="u2xx-tab"
-                data-bs-toggle="tab"
-                href="#u2xx"
-                role="tab"
-                aria-controls="u2xx"
-                aria-selected="false"
-                >U2XX</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="u3xx-tab"
-                data-bs-toggle="tab"
-                href="#u3xx"
-                role="tab"
-                aria-controls="u3xx"
-                aria-selected="false"
-                >U3XX</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="u5xx-tab"
-                data-bs-toggle="tab"
-                href="#u5xx"
-                role="tab"
-                aria-controls="u5xx"
-                aria-selected="false"
-                >U5XX</a
-              >
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div
-              class="tab-pane fade show active"
-              id="u1xx"
-              role="tabpanel"
-              aria-labelledby="u1xx-tab"
-            >
-              <!-- U1XX INNER PILL BEGIN -->
-              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link active"
-                    id="pills-u100-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-u100"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-u100"
-                    aria-selected="true"
-                  >
-                    U100
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-u110-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-u110"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-u110"
-                    aria-selected="false"
-                  >
-                    U110
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-u130-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-u130"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-u130"
-                    aria-selected="false"
-                  >
-                    U130
-                  </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button
-                    class="nav-link"
-                    id="pills-u150-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-u150"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-u150"
-                    aria-selected="false"
-                  >
-                    U150
-                  </button>
-                </li>
-              </ul>
-              <div class="tab-content" id="pills-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="pills-u100"
-                  role="tabpanel"
-                  aria-labelledby="pills-u100-tab"
-                  tabindex="0"
+       <!-- ///////// Modal Form ////////// -->
+       <form class="form">
+        <!-- Modal -->
+        <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Submit New Rates</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                      <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-rates-tab" data-bs-toggle="pill" href="#v-pills-rates" role="tab" aria-controls="v-pills-user" aria-selected="true">Rates</a>
+                            <a class="nav-link" id="v-pills-cal_yr_hrs-tab" data-bs-toggle="pill" href="#v-pills-cal_yr_hrs" role="tab" aria-controls="v-pills-cal_yr_hrs" aria-selected="false">Calendary Year Hours</a>
+                            <a class="nav-link" id="v-pills-exclude-tab" data-bs-toggle="pill" href="#v-pills-exclude" role="tab" aria-controls="v-pills-exclude" aria-selected="false">Exclude Tables</a>
+
+                        </div>
+                        <div class="tab-content flex-grow-1" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active " id="v-pills-rates" role="tabpanel" aria-labelledby="v-pills-user-tab">
+                              <label for="rus_rate">RUS (RUS LOCALITY)</label>
+                              <input type="text" id="rus_rate"><br>
+                              <label for="guam_rate">GUAM (RUS LOCALITY)</label>
+                              <input type="text" id="guam_rate">
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-cal_yr_hrs" role="tabpanel" aria-labelledby="v-pills-cal_yr_hrs-tab">
+                              <div class="row">
+                                <div class="col">
+                                  <input type="radio" name="cal_yr_hrs" value="260">260 days - 2080 hours<br>
+                                  <input type="radio" name="cal_yr_hrs" value="261">261 days - 2088 hours<br>
+                                  <input type="radio" name="cal_yr_hrs" value="262">262 days - 2096 hours<br>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-exclude" role="tabpanel" aria-labelledby="v-pills-exclude-tab">
+                              <div class="row">
+                                <div class="col-3">
+                                  <input type="checkbox" name="U100" value="U100">U100<br>
+                                    <input type="checkbox" name="U100" value="U110">U100<br>
+                                    <input type="checkbox" name="U130" value="U130">U130<br>`
+                                    <input type="checkbox" name="U150" value="U150">U150<br>
+                                </div>
+                                <div class="col-3">
+                                  <input type="checkbox" name="U200" value="U200">U200<br>
+                                    <input type="checkbox" name="U210" value="U210">U210<br>
+                                    <input type="checkbox" name="U230" value="U230">U230<br>
+                                    <input type="checkbox" name="U250" value="U250">U250<br>
+                                </div>
+                                <div class="col-3">
+                                  <input type="checkbox" name="U300" value="U300">U300<br>
+                                    <input type="checkbox" name="U310" value="U310">U310<br>
+                                    <input type="checkbox" name="U330" value="U330">U330<br>
+                                    <input type="checkbox" name="U350" value="U350">U350<br>
+                                </div>
+                                <div class="col-3">
+                                  <input type="checkbox" name="U500" value="U500">U500<br>
+                                    <input type="checkbox" name="U510" value="U510">U510<br>
+                                    <input type="checkbox" name="U530" value="U530">U530<br>
+                                    <input type="checkbox" name="U550" value="U550">U550<br>
+                                </div>
+                              </div>
+
+                          </div>
+
+                        </div>
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       </form>
+        <!-- ///////// Modal Form END ////////// -->
+        <div class="row">
+          <div class="col">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  id="u1xx-tab"
+                  data-bs-toggle="tab"
+                  href="#u1xx"
+                  role="tab"
+                  aria-controls="u1xx"
+                  aria-selected="true"
+                  >U1XX</a
                 >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="u2xx-tab"
+                  data-bs-toggle="tab"
+                  href="#u2xx"
+                  role="tab"
+                  aria-controls="u2xx"
+                  aria-selected="false"
+                  >U2XX</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="u3xx-tab"
+                  data-bs-toggle="tab"
+                  href="#u3xx"
+                  role="tab"
+                  aria-controls="u3xx"
+                  aria-selected="false"
+                  >U3XX</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="u5xx-tab"
+                  data-bs-toggle="tab"
+                  href="#u5xx"
+                  role="tab"
+                  aria-controls="u5xx"
+                  aria-selected="false"
+                  >U5XX</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="u1xx"
+                role="tabpanel"
+                aria-labelledby="u1xx-tab"
+              >
+                <!-- U1XX INNER PILL BEGIN -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="pills-u100-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-u100"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-u100"
+                      aria-selected="true"
+                    >
+                      U100
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-u110-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-u110"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-u110"
+                      aria-selected="false"
+                    >
+                      U110
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-u130-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-u130"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-u130"
+                      aria-selected="false"
+                    >
+                      U130
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="pills-u150-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-u150"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-u150"
+                      aria-selected="false"
+                    >
+                      U150
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="pills-u100"
+                    role="tabpanel"
+                    aria-labelledby="pills-u100-tab"
+                    tabindex="0"
+                  >
                   <div class="row">
                     <div class="col d-flex justify-content-between">
                       <h5>U100</h5><button>Save as PDF<i class="bi bi-file-earmark-pdf-fill text-danger"></i></button>
                     </div>
-                    <table class="table table-striped">
-                    <tr>
-                      <th style="background-color: #3d829e; color: white">
-                        Step
-                      </th>
-                      <th style="background-color: #3d829e; color: white">
-                        Annual
-                      </th>
-                      <th style="background-color: #3d829e; color: white">
-                        Per Hour
-                      </th>
-                      <th style="background-color: #3d829e; color: white">
-                        Earned
-                      </th>
-                    </tr>
-                    <tr
-                      ng-repeat="row in u100"
-                      class="clickable_row btnRow"
-                      data-toggle="modal"
-                      data-target="#rowModal"
-                      ng-click="openRowModal()"
-                    >
-                      <td style="background-color: #3d829e; color: white">
-                        {{row.Step}}
-                      </td>
-                      <td>${{row.Annual}}</td>
-                      <td>{{row.PerHour}}</td>
-                      <td>{{row.Earned}}</td>
-                    </tr>
-                  </table>
 
+                  </div>
+                  <div class="row">
+                    <div class="col table-responsive">
+
+
+                        <table class="table table-striped">
+                          <tr>
+                            <th style="background-color: #3d829e; color: white">
+                              Step
+                            </th>
+                            <th style="background-color: #3d829e; color: white">
+                              Annual
+                            </th>
+                            <th style="background-color: #3d829e; color: white">
+                              Per Hour
+                            </th>
+                            <th style="background-color: #3d829e; color: white">
+                              Earned
+                            </th>
+                          </tr>
+                          <tr
+                            ng-repeat="row in u100"
+                            class="clickable_row btnRow"
+                            data-toggle="modal"
+                            data-target="#rowModal"
+                            ng-click="openRowModal()"
+                          >
+                            <td style="background-color: #3d829e; color: white">
+                              {{row.Step}}
+                            </td>
+                            <td>${{row.Annual}}</td>
+                            <td>{{row.PerHour}}</td>
+                            <td>{{row.Earned}}</td>
+                          </tr>
+                       </table>
+
+                    </div>
+                  </div>
+
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-u110"
+                    role="tabpanel"
+                    aria-labelledby="pills-u110-tab"
+                    tabindex="0"
+                  >
+                    U110
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-u130"
+                    role="tabpanel"
+                    aria-labelledby="pills-u130-tab"
+                    tabindex="0"
+                  >
+                    U130
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="pills-u150"
+                    role="tabpanel"
+                    aria-labelledby="pills-u150-tab"
+                    tabindex="0"
+                  >
+                    U150
+                  </div>
                 </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-u110"
-                  role="tabpanel"
-                  aria-labelledby="pills-u110-tab"
-                  tabindex="0"
-                >
-                  U110
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-u130"
-                  role="tabpanel"
-                  aria-labelledby="pills-u130-tab"
-                  tabindex="0"
-                >
-                  U130
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="pills-u150"
-                  role="tabpanel"
-                  aria-labelledby="pills-u150-tab"
-                  tabindex="0"
-                >
-                  U150
-                </div>
+                <!-- U1XX INNER PILLS END -->
               </div>
-              <!-- U1XX INNER PILLS END -->
-            </div>
 
-          </div>
-          <div
-          class="tab-pane fade"
-          id="u2xx"
-          role="tabpanel"
-          aria-labelledby="u2xx-tab"
-        >
-          <!-- U2XX INNER PILLS BEGIN -->
-          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active"
-                id="pills-u200-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-u200"
-                type="button"
-                role="tab"
-                aria-controls="pills-u100"
-                aria-selected="true"
+            </div>
+            <div
+            class="tab-pane fade"
+            id="u2xx"
+            role="tabpanel"
+            aria-labelledby="u2xx-tab"
+          >
+            <!-- U2XX INNER PILLS BEGIN -->
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-u200-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-u200"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-u100"
+                  aria-selected="true"
+                >
+                  U200
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-u110-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-u110"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-u110"
+                  aria-selected="false"
+                >
+                  U210
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-u130-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-u130"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-u130"
+                  aria-selected="false"
+                >
+                  U230
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-u150-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-u150"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-u150"
+                  aria-selected="false"
+                >
+                  U250
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-u200"
+                role="tabpanel"
+                aria-labelledby="pills-u100-tab"
+                tabindex="0"
               >
-                U200
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-u110-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-u110"
-                type="button"
-                role="tab"
-                aria-controls="pills-u110"
-                aria-selected="false"
+                <div class="row">
+                  <div class="col d-flex justify-content-between">
+                    <h5>U200</h5><button>Save as PDF<i class="bi bi-file-earmark-pdf-fill text-danger"></i></button>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col table-responsive">
+
+
+                      <table class="table table-striped">
+                        <tr>
+                          <th style="background-color: #3d829e; color: white">
+                            Step
+                          </th>
+                          <th style="background-color: #3d829e; color: white">
+                            Annual
+                          </th>
+                          <th style="background-color: #3d829e; color: white">
+                            Per Hour
+                          </th>
+                          <th style="background-color: #3d829e; color: white">
+                            Earned
+                          </th>
+                        </tr>
+                        <tr
+                          ng-repeat="row in u200"
+                          class="clickable_row btnRow"
+                          data-toggle="modal"
+                          data-target="#rowModal"
+                          ng-click="openRowModal()"
+                        >
+                          <td style="background-color: #3d829e; color: white">
+                            {{row.Step}}
+                          </td>
+                          <td>${{row.Annual}}</td>
+                          <td>{{row.PerHour}}</td>
+                          <td>{{row.Earned}}</td>
+                        </tr>
+                     </table>
+
+                  </div>
+                </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-u210"
+                role="tabpanel"
+                aria-labelledby="pills-u210-tab"
+                tabindex="0"
               >
                 U210
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-u130-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-u130"
-                type="button"
-                role="tab"
-                aria-controls="pills-u130"
-                aria-selected="false"
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-u230"
+                role="tabpanel"
+                aria-labelledby="pills-u230-tab"
+                tabindex="0"
               >
                 U230
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-u150-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-u150"
-                type="button"
-                role="tab"
-                aria-controls="pills-u150"
-                aria-selected="false"
+              </div>
+              <div
+                class="tab-pane fade"
+                id="pills-u250"
+                role="tabpanel"
+                aria-labelledby="pills-u250-tab"
+                tabindex="0"
               >
                 U250
-              </button>
-            </li>
-          </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-u200"
-              role="tabpanel"
-              aria-labelledby="pills-u100-tab"
-              tabindex="0"
-            >
-              <div class="row">
-                <div class="col d-flex justify-content-between">
-                  <h5>U200</h5><button>Save as PDF<i class="bi bi-file-earmark-pdf-fill text-danger"></i></button>
-                </div>
-                <table class="table table-striped">
-                <tr>
-                  <th style="background-color: #3d829e; color: white">
-                    Step
-                  </th>
-                  <th style="background-color: #3d829e; color: white">
-                    Annual
-                  </th>
-                  <th style="background-color: #3d829e; color: white">
-                    Per Hour
-                  </th>
-                  <th style="background-color: #3d829e; color: white">
-                    Earned
-                  </th>
-                </tr>
-                <tr
-                  ng-repeat="row in u200"
-                  class="clickable_row btnRow"
-                  data-toggle="modal"
-                  data-target="#rowModal"
-                  ng-click="openRowModal()"
-                >
-                  <td style="background-color: #3d829e; color: white">
-                    {{row.Step}}
-                  </td>
-                  <td>${{row.Annual}}</td>
-                  <td>{{row.PerHour}}</td>
-                  <td>{{row.Earned}}</td>
-                </tr>
-              </table>
+              </div>
             </div>
-            <div
-              class="tab-pane fade"
-              id="pills-u210"
-              role="tabpanel"
-              aria-labelledby="pills-u210-tab"
-              tabindex="0"
-            >
-              U210
-            </div>
-            <div
-              class="tab-pane fade"
-              id="pills-u230"
-              role="tabpanel"
-              aria-labelledby="pills-u230-tab"
-              tabindex="0"
-            >
-              U230
-            </div>
-            <div
-              class="tab-pane fade"
-              id="pills-u250"
-              role="tabpanel"
-              aria-labelledby="pills-u250-tab"
-              tabindex="0"
-            >
-              U250
-            </div>
+            <!-- U2XX INNER PILLS END -->
           </div>
-          <!-- U2XX INNER PILLS END -->
-        </div>
-        <div
-          class="tab-pane fade"
-          id="u3xx"
-          role="tabpanel"
-          aria-labelledby="u3xx-tab"
-        >
-          <!-- U3XX INNER PILLS BEGIN -->
-U3XX
-          <!-- U3XX INNER PILLS END -->
-        </div>
-        <div
-          class="tab-pane fade"
-          id="u5xx"
-          role="tabpanel"
-          aria-labelledby="u5xx-tab"
-        >
-          <!-- U5XX INNER PILLS BEGIN -->
-U5XX
-          <!-- U5XX INNER PILLS END -->
+          <div
+            class="tab-pane fade"
+            id="u3xx"
+            role="tabpanel"
+            aria-labelledby="u3xx-tab"
+          >
+            <!-- U3XX INNER PILLS BEGIN -->
+  U3XX
+            <!-- U3XX INNER PILLS END -->
+          </div>
+          <div
+            class="tab-pane fade"
+            id="u5xx"
+            role="tabpanel"
+            aria-labelledby="u5xx-tab"
+          >
+            <!-- U5XX INNER PILLS BEGIN -->
+  U5XX
+            <!-- U5XX INNER PILLS END -->
+          </div>
+          </div>
         </div>
 
         </div>
-      </div>
+        </div>
+
     </div>
   </body>
 </html>
