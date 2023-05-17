@@ -71,8 +71,10 @@
 
     <div class="container" ng-controller="myController">
       <div class="row" id="paytable-heading">
-        <div class="col d-flex justify-content-between">
+        <div class="col-6 d-flex align-items-center">
           <h4>DoDEA Pay Tables</h4>
+        </div>
+        <div class="col-6 justify-content-end">
           <!-- ///////// Button trigger modal ////////// -->
           <button
             type="button"
@@ -83,9 +85,11 @@
           >
             Enter New Pay Rates
           </button>
+          <button type="button" class="btn btn-secondary">DCPAS Export</button>
         </div>
-        <hr style="margin-top: 1.5rem" />
       </div>
+
+      <hr style="margin-top: 1.5rem" />
 
       <!-- ///////// Modal Form ////////// -->
       <form class="form">

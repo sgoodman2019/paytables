@@ -30,6 +30,9 @@ header img {
   vertical-align: middle;
 }
 
+button {
+  margin: 0.1rem;
+}
 th {
   background-color: blue;
   color: white;
