@@ -110,6 +110,9 @@ app.controller("myController", function ($scope, $http) {
   ];
 
   //$scope.u500 = [];
+  $("#dcpas").click(function () {
+    window.location = "./data/DCPAS.xlsx";
+  });
 
   // $scope.submit = function () {
   //   const u1xxRate = Number(document.getElementById("u1xx").value) / 100;
