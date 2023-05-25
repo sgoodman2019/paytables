@@ -23,32 +23,59 @@
   <script>
     window.jsPDF = window.jspdf.jsPDF;
     function generateTable() {
-      var doc = new jsPDF("p", "pt", "letter");
-      var y = 20;
+      //
+      var doc = new jsPDF();
+      doc.setFontSize(12);
+      var y = 10;
+      // set midPage
+      var midPage = doc.internal.pageSize.getWidth() / 2;
       doc.setLineWidth(2);
-      doc.text(200, (y = y + 30), "U100");
+      //doc.text(200, (y = y + 30), "U100");
+      var txt =
+        "2022/2023" +
+        "\n" +
+        "WEST POINT U100" +
+        "\n" +
+        "Licensed Practitioner Nurse (LPN)";
+      doc.text(txt, midPage - 4, y, "center");
       doc.autoTable({
         html: "#u100-table",
-        startY: 70,
+        startY: 30,
         theme: "grid",
         columnStyles: {
           0: {
             halign: "right",
-            tableWidth: 100,
+            tableWidth: "10",
+            cellWidth: "10",
           },
           1: {
-            tableWidth: 100,
+            tableWidth: "auto",
+            cellWidth: "10",
           },
           2: {
             halign: "right",
-            tableWidth: 100,
+            tableWidth: "auto",
+            cellWidth: "10",
           },
           3: {
             halign: "right",
-            tableWidth: 100,
+            tableWidth: "auto",
+            cellWidth: "10",
           },
         },
       });
+      var footer =
+        "Increase of 4.95% in accordance with MLA" +
+        "\n" +
+        "Paid hourly rate based on 2096 hours (262 days) from7/25/23 to 7/24/2024" +
+        "\n" +
+        "Effective 7/25/2023";
+      doc.text(
+        footer,
+        midPage - 5,
+        doc.internal.pageSize.height - 20,
+        "center"
+      );
       doc.save("auto_table_pdf");
     }
   </script>
