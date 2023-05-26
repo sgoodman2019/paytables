@@ -24,8 +24,8 @@
     window.jsPDF = window.jspdf.jsPDF;
     function generateTable() {
       //
-      var doc = new jsPDF();
-      doc.setFontSize(12);
+      var doc = new jsPDF("landscape");
+      doc.setFontSize(10);
       var y = 10;
       // set midPage
       var midPage = doc.internal.pageSize.getWidth() / 2;
@@ -40,28 +40,19 @@
       doc.text(txt, midPage - 4, y, "center");
       doc.autoTable({
         html: "#u100-table",
+        margin: { width: 500 },
         startY: 30,
         theme: "grid",
+        styles: { halign: "center" },
+        headStyles: { fillColor: [124, 95, 240] },
+        alternateRowStyles: { fillColor: [231, 215, 252] },
+        tableLineColor: [124, 95, 240],
+        tableLineWidth: 0.1,
         columnStyles: {
-          0: {
-            halign: "right",
-            tableWidth: "10",
-            cellWidth: "10",
-          },
-          1: {
-            tableWidth: "auto",
-            cellWidth: "10",
-          },
-          2: {
-            halign: "right",
-            tableWidth: "auto",
-            cellWidth: "10",
-          },
-          3: {
-            halign: "right",
-            tableWidth: "auto",
-            cellWidth: "10",
-          },
+          0: { halign: "left", fontStyle: "bold", cellWidth: 30 },
+          1: { halign: "left", fontStyle: "bold", cellWidth: 50 },
+          2: { halign: "left", fontStyle: "bold", cellWidth: 50 },
+          3: { halign: "left", fontStyle: "bold", cellWidth: 50 },
         },
       });
       var footer =
