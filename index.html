@@ -37,22 +37,27 @@
         "WEST POINT U100" +
         "\n" +
         "Licensed Practitioner Nurse (LPN)";
-      doc.text(txt, midPage - 4, y, "center");
+      doc.text(txt, midPage - 2, y, "center");
       doc.autoTable({
         html: "#u100-table",
-        margin: { width: 500 },
+        margin: { right: 109, left: 108 },
         startY: 30,
         theme: "grid",
-        styles: { halign: "center" },
-        headStyles: { fillColor: [124, 95, 240] },
-        alternateRowStyles: { fillColor: [231, 215, 252] },
-        tableLineColor: [124, 95, 240],
+        styles: {
+          halign: "center",
+          cellPadding: 0,
+          rowHeight: 2,
+          fontSize: 11,
+        },
+        headStyles: { fillColor: [173, 216, 230] },
+        alternateRowStyles: { fillColor: [173, 216, 230] },
+        tableLineColor: [173, 216, 230],
         tableLineWidth: 0.1,
         columnStyles: {
-          0: { halign: "left", fontStyle: "bold", cellWidth: 30 },
-          1: { halign: "left", fontStyle: "bold", cellWidth: 50 },
-          2: { halign: "left", fontStyle: "bold", cellWidth: 50 },
-          3: { halign: "left", fontStyle: "bold", cellWidth: 50 },
+          0: { halign: "center", cellWidth: 20 },
+          1: { halign: "center", cellWidth: 20 },
+          2: { halign: "center", cellWidth: 20 },
+          3: { halign: "center", cellWidth: 20 },
         },
       });
       var footer =
@@ -63,7 +68,7 @@
         "Effective 7/25/2023";
       doc.text(
         footer,
-        midPage - 5,
+        midPage - 2,
         doc.internal.pageSize.height - 20,
         "center"
       );
